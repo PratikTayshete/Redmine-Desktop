@@ -1,4 +1,9 @@
-# Miscellaneous
+# Byte-compiled / optimized / DLL files
+__pycache__/
 *.pyc
+
+# Miscellaneous
+docs/
+
 # IntelliJ related
 .idea/
