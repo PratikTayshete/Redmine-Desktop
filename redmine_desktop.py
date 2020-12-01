@@ -1,6 +1,7 @@
 from PySide2.QtWidgets import QMainWindow, QApplication
 from gui.RDLoginUI import Ui_RDLogin
 from libs.redmine import RedMineManager
+from modules.ui import RedmineDesktopMain
 
 
 class RedmineDesktop(QMainWindow, Ui_RDLogin):
@@ -8,7 +9,9 @@ class RedmineDesktop(QMainWindow, Ui_RDLogin):
         QMainWindow.__init__(self)
         Ui_RDLogin.__init__(self)
         self.setupUi(self)
-        self.redmine_user = None
+        self.redmine_manager = None
+        self.is_user_valid = None
+        self.main_rd_app = None
         self.connect_interface()
 
     def connect_interface(self):
@@ -17,8 +20,16 @@ class RedmineDesktop(QMainWindow, Ui_RDLogin):
     def login(self):
         username = str(self.usernameLoginLinedit.text())
         password = str(self.passwordLoginLinedit.text())
-        self.redmine_user = RedMineManager(username=username, password=password)
-        print(self.redmine_user.get_projects())
+        self.redmine_manager = RedMineManager(username=username, password=password)
+        self.is_user_valid = self.redmine_manager.validate_login()
+        if self.is_user_valid:
+            print("[INFO]User [{}] successfully logged in.".format(username))
+            self.close()
+            self.main_rd_app = RedmineDesktopMain(redmine_manager=self.redmine_manager)
+            self.main_rd_app.launch()
+
+        else:
+            print("[INFO] Invalid login.")
 
 
 if __name__ == '__main__':
