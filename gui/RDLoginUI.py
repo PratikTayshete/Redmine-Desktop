@@ -104,9 +104,6 @@ class Ui_RDLogin(object):
         self.frame.setMinimumSize(QSize(300, 371))
         self.frame.setMaximumSize(QSize(300, 371))
         self.frame.setStyleSheet(u"QFrame {\n"
-"	\n"
-"	\n"
-"	\n"
 "	background-color: rgb(33, 33, 33);\n"
 "	border-radius: 25px;\n"
 "}")
