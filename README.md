@@ -7,7 +7,7 @@ For more information on redmine please check: https://www.redmine.org/
     - https://www.redmine.org/projects/redmine/wiki/Rest_api_with_python
     - https://python-redmine.com/index.html
     - https://github.com/maxtepkeev/python-redmine
- - App icons
+ - Application icons
     - https://www.flaticon.com/
 
 ### Requirements
