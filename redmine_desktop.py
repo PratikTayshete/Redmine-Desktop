@@ -1,5 +1,7 @@
 from PySide2.QtWidgets import QMainWindow, QApplication
+from PySide2.QtCore import Qt
 from gui.RDAppUI import Ui_RDApp
+from gui.IssueDialogUI import Ui_CreateIssue
 from libs.redmine import RedMineManager
 from utils import operations
 
@@ -9,6 +11,7 @@ class RedmineDesktop(QMainWindow, Ui_RDApp):
         QMainWindow.__init__(self)
         Ui_RDApp.__init__(self)
         self.setupUi(self)
+        self.login_dialog_ui = Ui_CreateIssue()
         self.redmine_manager = None
         self.is_user_valid = None
         self.rdStackWidget.setCurrentIndex(0)
@@ -20,12 +23,15 @@ class RedmineDesktop(QMainWindow, Ui_RDApp):
         """
         self.loginButton.clicked.connect(self.login)
         self.logoutButton.clicked.connect(self.logout)
-        self.refreshButton.clicked.connect(self.load_data)
+        self.refreshButton.clicked.connect(self.refresh_data)
+        self.createIssueButton.clicked.connect(self.create_issue)
 
     def login(self):
         """
         Validates the user and logs in.
         """
+        QApplication.setOverrideCursor(Qt.WaitCursor)
+        print("[INFO] Loading data........")
         username = str(self.usernameLoginLinedit.text())
         password = str(self.passwordLoginLinedit.text())
         self.redmine_manager = RedMineManager(username=username, password=password)
@@ -35,19 +41,22 @@ class RedmineDesktop(QMainWindow, Ui_RDApp):
             self.passwordLoginLinedit.clear()
             print("[INFO]User [{}] successfully logged in.".format(username))
             self.rdStackWidget.setCurrentIndex(1)
-            self.load_data()
+            self.refresh_data()
+            QApplication.restoreOverrideCursor()
         else:
             print("[INFO] Invalid login.")
             operations.display_message("Invalid Login", "Please check the login credentials.")
 
-    def load_data(self):
+    def refresh_data(self):
         """
-        Loads the data in the application.
+        Loads the latest data in the application.
         """
+        operations.clear_issues_table(self.issuesTableWidget)
         self.load_total_projects()
         self.load_total_issues()
         self.load_total_issues_resolved()
         self.load_total_pending_issues()
+        self.load_issues_table()
 
     def load_total_pending_issues(self):
         """
@@ -76,6 +85,20 @@ class RedmineDesktop(QMainWindow, Ui_RDApp):
         """
         total_projects = self.redmine_manager.total_projects_count()
         self.totalProjectsCountLabel.setText(total_projects)
+
+    def create_issue(self):
+        """
+        Opens a QDialog to create new Issue.
+        :return:
+        """
+        operations.open_issue_dialog(dialog_ui=self.login_dialog_ui)
+
+    def load_issues_table(self):
+        """
+        Display the issues created by the user.
+        """
+        issues_dict = self.redmine_manager.get_issues()
+        operations.load_issues_table_data(table_widget=self.issuesTableWidget, issues_dict=issues_dict)
 
     def logout(self):
         """
