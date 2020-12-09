@@ -29,7 +29,8 @@ class Ui_RDApp(object):
         self.centralwidget.setStyleSheet(u"QHeaderView::section {\n"
 "	\n"
 "	background-color: rgb(66, 66, 66);\n"
-"	color: rgb(255, 255, 255);\n"
+"	\n"
+"	color: rgb(252, 162, 68);\n"
 "	border-style: inset;\n"
 "}\n"
 "QTableWidget {\n"
@@ -627,33 +628,37 @@ class Ui_RDApp(object):
         self.issuesTableWidget = QTableWidget(self.issuesTableFrame)
         if (self.issuesTableWidget.columnCount() < 5):
             self.issuesTableWidget.setColumnCount(5)
+        font7 = QFont()
+        font7.setFamily(u"Segoe UI")
+        font7.setPointSize(10)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setTextAlignment(Qt.AlignCenter);
-        __qtablewidgetitem.setFont(font4);
+        __qtablewidgetitem.setFont(font7);
         self.issuesTableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
         __qtablewidgetitem1.setTextAlignment(Qt.AlignCenter);
-        __qtablewidgetitem1.setFont(font4);
+        __qtablewidgetitem1.setFont(font7);
         self.issuesTableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
         __qtablewidgetitem2.setTextAlignment(Qt.AlignCenter);
-        __qtablewidgetitem2.setFont(font4);
+        __qtablewidgetitem2.setFont(font7);
         self.issuesTableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
         __qtablewidgetitem3.setTextAlignment(Qt.AlignCenter);
-        __qtablewidgetitem3.setFont(font4);
+        __qtablewidgetitem3.setFont(font7);
         self.issuesTableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
         __qtablewidgetitem4.setTextAlignment(Qt.AlignCenter);
-        __qtablewidgetitem4.setFont(font4);
+        __qtablewidgetitem4.setFont(font7);
         self.issuesTableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         self.issuesTableWidget.setObjectName(u"issuesTableWidget")
-        font7 = QFont()
-        font7.setPointSize(12)
-        self.issuesTableWidget.setFont(font7)
+        font8 = QFont()
+        font8.setPointSize(12)
+        self.issuesTableWidget.setFont(font8)
         self.issuesTableWidget.setAutoScrollMargin(10)
         self.issuesTableWidget.setTextElideMode(Qt.ElideRight)
         self.issuesTableWidget.setShowGrid(False)
+        self.issuesTableWidget.setWordWrap(False)
         self.issuesTableWidget.horizontalHeader().setStretchLastSection(True)
         self.issuesTableWidget.verticalHeader().setVisible(False)
 
@@ -697,12 +702,12 @@ class Ui_RDApp(object):
         ___qtablewidgetitem = self.issuesTableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("RDApp", u"ID", None));
         ___qtablewidgetitem1 = self.issuesTableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("RDApp", u"Subject", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("RDApp", u"SUBJECT", None));
         ___qtablewidgetitem2 = self.issuesTableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("RDApp", u"Status", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("RDApp", u"STATUS", None));
         ___qtablewidgetitem3 = self.issuesTableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("RDApp", u"Priority", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("RDApp", u"PRIORITY", None));
         ___qtablewidgetitem4 = self.issuesTableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("RDApp", u"Description", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("RDApp", u"DESCRIPTION", None));
     # retranslateUi
 
