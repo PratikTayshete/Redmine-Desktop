@@ -14,5 +14,6 @@ For more information on redmine please check: https://www.redmine.org/
  - `pip install -r requirements.txt`
 
 ### Launch the application
+ - Change the REDMINE_URL in utils/constants.py to the url where your redmine is installed.
  - `python redmine_desktop.py`
  
