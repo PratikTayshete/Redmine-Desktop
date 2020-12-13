@@ -4,13 +4,13 @@ For more information on redmine please check: https://www.redmine.org/
 
 ### Screenshots
  - Login 
- <img src="https://github.com/PratikTayshete/Redmine-Desktop/blob/master/assets/screenshots/login_screenshot.PNG">
+ <img src="https://github.com/PratikTayshete/Redmine-Desktop/blob/master/images/login_screenshot.PNG">
  
  - Main dashboard
- <img src="https://github.com/PratikTayshete/Redmine-Desktop/blob/master/assets/screenshots/dashboard_screenshot.PNG">
+ <img src="https://github.com/PratikTayshete/Redmine-Desktop/blob/master/images/dashboard_screenshot.PNG">
  
  - Create new issue
- <img src="https://github.com/PratikTayshete/Redmine-Desktop/blob/master/assets/screenshots/new_issue_screenshot.PNG">
+ <img src="https://github.com/PratikTayshete/Redmine-Desktop/blob/master/images/new_issue_screenshot.PNG">
 
 ### Reference
  - Redmine
