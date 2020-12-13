@@ -7,8 +7,7 @@ For more information on redmine please check: https://www.redmine.org/
     - https://www.redmine.org/projects/redmine/wiki/Rest_api_with_python
     - https://python-redmine.com/introduction.html
     - https://github.com/maxtepkeev/python-redmine
- - Application icons
-    - https://www.flaticon.com/
+    - https://bitnami.com/stack/redmine/installer
 
 ### Requirements
  - Python 3
@@ -16,3 +15,4 @@ For more information on redmine please check: https://www.redmine.org/
 
 ### Launch the application
  - `python redmine_desktop.py`
+ 
