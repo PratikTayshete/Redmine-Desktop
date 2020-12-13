@@ -10,7 +10,7 @@ class RedMineManager:
         self.projects_list = None
         self.all_projects = None
         self.issues_dict = None
-        self.redmine = Redmine("http://127.0.0.1/redmine", username=self.username, password=self.password)
+        self.redmine = Redmine(constants.REDMINE_URL, username=self.username, password=self.password)
 
     def validate_login(self):
         """
