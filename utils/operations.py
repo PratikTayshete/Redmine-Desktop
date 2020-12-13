@@ -14,15 +14,6 @@ def display_message(title, message):
     message_box.exec_()
 
 
-def open_issue_dialog(dialog_ui):
-    issue_dialog = QDialog()
-    issue_dialog.setWindowFlags(Qt.WindowTitleHint)
-    issue_dialog.setWindowFlags(Qt.WindowSystemMenuHint)
-    issue_dialog.setWindowFlags(Qt.WindowCloseButtonHint)
-    dialog_ui.setupUi(issue_dialog)
-    issue_dialog.exec_()
-
-
 def clear_issues_table(issues_table):
     while issues_table.rowCount() > 0:
         issues_table.removeRow(0)
