@@ -2,6 +2,9 @@
 A desktop application for redmine. Redmine is a flexible project management web application.
 For more information on redmine please check: https://www.redmine.org/
 
+### Video
+ - https://youtu.be/9GtgGjnT0Io
+
 ### Screenshots
  - Login 
  <img src="https://github.com/PratikTayshete/Redmine-Desktop/blob/master/images/login_screenshot.PNG">
